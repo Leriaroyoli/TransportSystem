@@ -1,4 +1,11 @@
 package ua.transport.dal.repository.interfaces;
 
-public interface GenericRepository {
+import java.util.List;
+
+public interface GenericRepository<T> {
+    List<T> findAll();
+    T findById(Long id);
+    void create(T entity);
+    void update(T entity);
+    void delete(Long id);
 }
